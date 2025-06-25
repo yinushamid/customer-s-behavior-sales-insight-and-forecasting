@@ -1,73 +1,102 @@
-# customer behavior, sales insight and forecasting
+# Customer Behavior, Sales Insight and Forecasting
+## Business Story: Why This Project Matters
 
-## table of content
-- [project overview](#project-overview)
-- [data sources](#data-sources)
-- [recommendations](#recommendations)
+As a retail business grows, leaders start asking deeper questions:
 
-### project overview
-To help the business understand who our customers are and what they buy, track how well we're selling our products, and predict how much money we'll make in the future, all to make smarter decisions and grow the business
+- *"Who are our best customers?"*
+- *"Which products should we promote?"*
+- *"When do people buy the most?"*
+- *"Can we predict what our sales will look like next quarter?"*
 
-### data sources
- sales data: the primary dataset used for this analysis is the "sales_data.csv" file, from kaggle, containing detailed information about each sale made by the company
+This project answers all these questions by analyzing customer behavior, 
+identifying key sales patterns, and using time series forecasting to predict future revenue. 
+The result is a set of **clear, data-driven insights** that help the business plan smarter and sell more.
 
-### tools
-- python - data cleaning and prediction 
-- postgresql - data analysis
-- power Bi - creating reports
+---
+## Table of Content
+- [Project Overview](#project-overview)
+- [Data Sources](#data-sources)
+- [Tools](#tools)
+- [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Results](#results)
+- [Recommendations](#recommendations)
+- [Limitations](#limitations)
+- [References](#references)
 
-### data cleaning and preparation
-in the initial data preparation phase we perform the following tasks:
-1. data loading and inspection
-2. handling missing values
-3. data cleaning and formatting
+### Project Overview
+This project is designed to help the business understand:
+- Who our customers are and what they buy
+- How well we are selling our products
+- How much revenue we can expect in the future
 
-### exploratory data analysis
-EDA involved exploring the sales data to answer key questions such as
-- what is the overall sales trend?
-- which products are top sellers?
-- what are the peak sales product?
+The goal is to provide insights for smarter decision-making and business growth.
 
-### results
-the analysis results are summarised as follows
-#### customer behavior
-1. Atlanta ($196.13) and New York City ($195.59) have the highest average cart sizes, while Boston ($150) has the lowest.
-2. "Vareebadd Phone, Wired Headphones" and "USB-C Charging Cable, Wired Headphones" are the most frequent pairings, suggesting customers often buy accessories with their main devices.
-3. There are specific times (e.g., 07 PM, 12 PM) that show higher "Sales" indicating potential peak purchasing windows.
+### Data Sources
+- The main dataset used is **sales_data.csv** from Kaggle
+- It contains detailed information about each sale made by the company
 
-#### sale insight
-1.  The total sales are 34.49 Million, with 185.9K orders
-2.  San Francisco and Los Angeles are significant contributors to overall sales, with Dallas and Chicago also showing strong performance. New York appears lower in comparison.
-3.   "20in Monitor" consistently contributes across months, while others might have peak months (e.g., "ThinkPad Laptop" showing strong numbers in April and May).
-4.   "MacBook Pro Laptop" and "ThinkPad Laptop" are leading in sum of sales, followed by "20in 4K Gaming Monitor"
-5.    sales appear to pick up from March to July, then possibly decline again towards the end of the year
+### Tools
+- Python: Used for data cleaning and forecasting
+- PostgreSQL: Used for SQL-based analysis
+- Power BI: Used for creating interactive dashboards and visual reports
 
-#### forecast
-1. chart clearly shows past revenue performance, indicating periods of growth and fluctuation (e.g., a dip around early 2019, followed by recovery and growth into 2020).
-2. The forecast generally appears to follow the historical trend, suggesting a reasonable projection based on past performance.
+### Data Cleaning and Preparation
+The data preparation phase included:
+1. Loading and inspecting the data
+2. Handling missing or duplicated entries
+3. Converting date formats and extracting features like hour and month
+4. Formatting product names and standardizing locations
 
-### recommendation
-base on the analysis we recommend the following action:
-#### customer behavior
-1. Based on popular product combinations create specific product bundles or discount offers to encourage larger purchases.
-2.  For cities with lower average cart sizes, considerfree shipping thresholds to encourage customers to add more items to their carts.
-3. consider increasing marketing spend or customer service availability during those specific times to maximize conversion
+### Exploratory Data Analysis
+Key questions explored:
+- What is the overall sales trend?
+- Which products are top sellers?
+- What are the most frequent product pairings?
+- What time of day do people buy the most?
+- Which cities generate the most revenue?
 
-#### sales insight
-1. Allocate sales and marketing resources strategically based on city performance
-2. Given the high value of laptops, train sales teams to cross-sell accessories
-3. Analyze monthly sales trends to anticipate peak and trough periods
-4. For products with declining or stagnant sales, investigate reasons (e.g., competition, pricing, marketing) and consider strategies such as bundling or discounts
+### Results
 
-#### forecast
-1. Regularly compare actual sales revenue against the forecasted figures. Significant deviations (either positive or negative) should trigger further investigation to understand underlying causes and adjust strategies.
+#### Customer Behavior
+1. Atlanta ($196.13) and New York City ($195.59) have the highest average cart sizes. Boston has the lowest ($150).
+2. Product pairings like “Vareebadd Phone + Wired Headphones” and “USB-C Charging Cable + Wired Headphones” are common.
+3. Sales peak at 12 PM and 7 PM, showing when customers are most active.
 
-### limitations
-1. The dataset primarily contains transactional sales data. It may lack deeper customer demographic information (e.g., age, income, gender) or external factors (e.g., marketing spend, competitor activity, economic indicators) that could provide richer insights or explain sales fluctuations more thoroughly
-2. The historical data covers a specific period. While useful for forecasting, it might not capture long-term market shifts
+#### Sales Insight
+1. Total revenue is $34.49M from about 185.9K orders.
+2. San Francisco and Los Angeles contribute the most to revenue, while New York ranks lower.
+3. “20in Monitor” sells well across all months. “ThinkPad Laptop” peaks in April and May.
+4. Top products by revenue: MacBook Pro Laptop, ThinkPad Laptop, 20in 4K Gaming Monitor.
+5. Sales generally increase from March to July and drop toward the end of the year.
 
-### references
-This project utilized the 'Sales Data' dataset, which was sourced from Kaggle
+#### Forecast
+1. Revenue dropped early in 2019, recovered, and grew into 2020.
+2. Forecasts follow the historical trend and provide reliable estimates.
+
+### Recommendations
+
+#### Customer Behavior
+1. Create product bundles based on common combinations to increase average order value.
+2. For cities with lower cart sizes, use free shipping thresholds to increase order size.
+3. Focus ad campaigns and customer support during peak sales hours.
+
+#### Sales Strategy
+1. Allocate sales and marketing budgets based on city performance.
+2. Train staff to upsell accessories alongside high-value items like laptops.
+3. Monitor monthly trends to plan inventory and marketing more effectively.
+4. Offer discounts or bundles for underperforming products.
+
+#### Forecasting
+1. Regularly compare actual vs forecasted revenue to catch early warning signs.
+2. Adjust business plans if the actual sales deviate significantly from the forecast.
+
+### Limitations
+1. The dataset contains only transaction data—no demographic or marketing info.
+2. Time coverage is limited, so it may not reflect long-term changes in the market.
+
+### References
+- Dataset: Sales Data from Kaggle
 
 
 
